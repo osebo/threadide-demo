@@ -4,8 +4,39 @@ const startTime = Date.now();
 
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    res.writeHead(200, { "content-type": "text/plain" });
-    res.end("hello from threadide demo\n");
+    res.writeHead(200, { "content-type": "text/html" });
+    res.end(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>threadide demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    h1 {
+      color: #ffffff;
+      font-size: 4rem;
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body>
+  <h1>threadide demo</h1>
+</body>
+</html>
+`);
     return;
   }
   if (req.url === "/health") {
