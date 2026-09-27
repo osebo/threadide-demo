@@ -6,6 +6,11 @@ const server = http.createServer((req, res) => {
     res.end("hello from threadide demo\n");
     return;
   }
+  if (req.url === "/ping") {
+    res.writeHead(200, { "content-type": "text/plain" });
+    res.end("pong\n");
+    return;
+  }
   res.writeHead(404, { "content-type": "application/json" });
   res.end(JSON.stringify({ error: "not found" }));
 });
