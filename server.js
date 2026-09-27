@@ -17,6 +17,7 @@ const server = http.createServer((req, res) => {
       padding: 0;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       background: #1a1a1a;
@@ -30,10 +31,18 @@ const server = http.createServer((req, res) => {
       text-align: center;
       letter-spacing: -0.02em;
     }
+    footer {
+      position: fixed;
+      bottom: 2rem;
+      color: #888;
+      font-size: 0.875rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <h1>threadide demo</h1>
+  <footer>powered by thread ide</footer>
 </body>
 </html>
 `);
